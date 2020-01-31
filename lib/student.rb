@@ -39,10 +39,8 @@ class Student
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
   end
 
-  def self.create(name:, grade:)
-    student = Student.new(name, grade)
-    student.save
-    student
+  def self.create()
+
     # binding.pry
     # hash = name_grade.each {|name, grade| public_send("#{name}=", grade)}
     # student = OpenStruct.new(name_grade)
